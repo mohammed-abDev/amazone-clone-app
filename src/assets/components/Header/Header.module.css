@@ -1,0 +1,172 @@
+.header_Container{
+    display: flex;
+    background-color: #036444;
+    color: white;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+}
+
+/* LOGO + LOCATION */
+.amazoneLogo_location{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    gap: 10px;
+}
+
+.amazoneLogo_location img{
+    width: 80%;
+}
+
+.location a{
+    color: white;
+    text-decoration: none;
+}
+
+.delivery{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* SEARCH BAR */
+.product_option_search{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.product_option_search select,
+.product_option_search input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-weight: bold;
+}
+
+.product_option_search select{
+    background: #d4d4d4;
+}
+
+.product_option_search input{
+    flex: 1;
+    margin-left: -2px;
+}
+
+.searchBtn{
+    background: #7f1153;
+    border: none;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+
+/* RIGHT SIDE */
+.right_side{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Languge_option{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.Languge_option select{
+    background-color:#036444;
+    border: none;
+    color: white;
+}
+
+.account a,
+.order a,
+.cart a{
+    text-decoration: none;
+    color: white;
+}
+
+.cart{
+    position: relative;
+}
+
+.cart span{
+    position: absolute;
+    top: 8px;
+    left: 18px;
+    color: rgb(191, 136, 70);
+    font-weight: bold;
+}
+
+/* HOVER BORDERS */
+.amazoneLogo_location img:hover,
+.location:hover,
+.Languge_option:hover,
+.account:hover,
+.order:hover,
+.cart:hover{
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+
+/* Header-Below */
+.lower_catagory_container{
+    background-color: #085749;
+    padding: 8px;
+}
+
+.lower_catagory_container ul{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lower_catagory_container ul li{
+    list-style: none;
+}
+
+.lower_catagory_container ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 8px;          
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.lower_catagory_container ul li a:hover{
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+@media(max-width: 1024px){
+    .Languge_option{
+        display: none;
+    }
+}
+
+@media(max-width :768px){
+    .header_Container{
+    display: flex;
+    flex-direction: column;
+    height:auto;
+    padding: 8px;
+} 
+    .Languge_option{
+        display: none;
+    }
+    .lower_catagory_container ul li:not(:first-child){
+        display: none;
+    }
+
+}
