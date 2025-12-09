@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import style from './Header.module.css'
 import { FaLocationDot } from "react-icons/fa6";
 import { MdAddShoppingCart } from "react-icons/md";
@@ -12,20 +13,20 @@ function Header() {
 <>
     <header className={style.header_Container}>
         <div className={style.amazoneLogo_location}>
-            <a href="">
+            <Link to="">
                 <img
                 src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                 alt="amzone-logo"/>
-            </a>
+            </Link>
 
             <div className={style.location}>
-                <a href="">
+                <Link to="">
                     <small>deliver to</small>
                     <div className={style.delivery}>
                         <FaLocationDot />
                         <strong>Ethiopia</strong>
                     </div>
-                </a>    
+                </Link>    
             </div>
             
         </div>
@@ -60,27 +61,27 @@ function Header() {
 
     {/*Account */}
             <div className={style.account}>
-                <a href="">
+                <Link to="/auth">
                     <small>Hello sin in</small>
                     <p><strong>account & Lists</strong></p>
-                </a>
+                </Link>
             </div>
 
     {/*order*/}
             <div className={style.order}>
-                <a href="">
+                <Link to="/order">
                     <small>Return</small>
                     <p><strong>& orders</strong></p>
-                </a>
+                </Link>
             </div>
 
     {/* cart */}
             <div className={style.cart}>
-                <a href="">
+                <Link to="/cart">
                     {/* <img src="" alt="" /> */}
                     <CiShoppingCart size={40} />
                     <span>{0}</span>
-                </a>
+                </Link>
             </div>
         </div>
     </header>
