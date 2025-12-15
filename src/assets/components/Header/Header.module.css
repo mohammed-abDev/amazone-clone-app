@@ -1,3 +1,10 @@
+.Position_fexid{
+    position: sticky;
+    top: 0;
+    
+    z-index: 1000;
+}
+
 .header_Container{
     display: flex;
     background-color: #036444;
@@ -101,11 +108,12 @@
 
 .cart span{
     position: absolute;
-    top: 8px;
-    left: 18px;
-    color: rgb(191, 136, 70);
+    top: 10px;
+    left: 20px;
+    color: #f48c06;
     font-weight: bold;
 }
+
 
 /* HOVER BORDERS */
 .amazoneLogo_location img:hover,

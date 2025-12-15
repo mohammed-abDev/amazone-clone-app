@@ -3,8 +3,12 @@
     padding: 10px 5px;
     box-shadow: 0 4px 8px rgba(141, 106, 141, 0.5);
     cursor: pointer;
-    flex: 1 1 25%;        
+    flex: 1 1 25%;
     max-width: 240px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
 }
 
 .product_Card img {
@@ -20,16 +24,36 @@
     justify-content: center;
     width: 90%;
     margin: 0 auto;
-    position: relative;
     z-index: 100;
+    position: relative;
+    top: -220px;
 }
 
 
+.btn button {
+    padding: 5px;
+    width: 90%;
+    margin: 15px auto 0;
+    border-radius: 10px;
+    background-color: #f48c06;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.btn button:hover {
+    background-color: #d97706;
+}
+
+/* responsive breakpoints */
 @media (max-width: 1024px) {
     .product_Card {
-        flex: 1 1 calc(50% - 20px); 
+        flex: 1 1 calc(50% - 20px);
         max-width: none;
         height: auto;
+    }
+    .single_product_container{
+        position: relative;
+        top: -100px;
     }
 }
 
@@ -37,10 +61,45 @@
     .single_product_container {
         flex-direction: column;
         align-items: center;
+        position: relative;
+        top: 50px;
+        
     }
     .product_Card {
         flex: 1 1 100%;
         max-width: 100%;
         height: auto;
     }
+    .product_Card.flex_container {
+        flex-direction: column; 
+    }
+}
+
+
+.product_Card.flex_container {
+    flex-direction: row;          
+    align-items: flex-start;
+    max-width: 800px;             
+}
+
+.product_Card.flex_container img {
+    width: 250px;                 
+    height: auto;
+    object-fit: contain;
+}
+
+.card_content {
+    flex: 1;                      
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+.descriptionText{
+    margin: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    max-width: 900px;
+
 }

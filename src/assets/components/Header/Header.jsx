@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext,useState,useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import style from './Header.module.css'
 import { FaLocationDot } from "react-icons/fa6";
@@ -6,11 +6,16 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { IoIosSearch } from "react-icons/io";
 import { CiShoppingCart } from "react-icons/ci";
 import HeaderBelow from './HeaderBelow';
+import {DataContext} from '../DataProvider/DataProvider'
 
 
 function Header() {
+    const [{ Basket }, dispatch] = useContext(DataContext);
+    // console.log(Basket.length)
+
   return (
 <>
+<section className={style.Position_fexid}>
     <header className={style.header_Container}>
         <div className={style.amazoneLogo_location}>
             <Link to="">
@@ -79,13 +84,14 @@ function Header() {
             <div className={style.cart}>
                 <Link to="/cart">
                     {/* <img src="" alt="" /> */}
-                    <CiShoppingCart size={40} />
-                    <span>{0}</span>
+                    <CiShoppingCart size={50} />
+                    <span>{Basket.length}</span>
                 </Link>
             </div>
         </div>
     </header>
     <HeaderBelow/>
+</section>    
 </>    
   );
 }

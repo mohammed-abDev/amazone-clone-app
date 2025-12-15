@@ -5,20 +5,26 @@ import axios from 'axios';
 import productUrl from '../../Api/endPoint';
 import ProductCard from '../../components/Product/ProductCard';
 import style from './Results.module.css'
+import Loder from '../../components/Loder/Loder';
 
 
 function Results() {
     const {categoryname}=useParams();
 
     const [result,setResult] =useState([])
+    const [isLoading,setIsLoading] =useState(false)
 
 useEffect(()=>{
+    setIsLoading(true)
+
     axios.get(`${productUrl}/category/${categoryname}`)
     .then((res)=>{
         console.log(res)
         setResult(res.data)
     }).catch((error)=>{
         console.log("error during feach",error);
+    }).finally(()=>{
+        setIsLoading(false)
     })
 },[categoryname])
 
@@ -27,8 +33,8 @@ useEffect(()=>{
     <LayOut>
         <div>
             {
-                result.length ==0 ?(
-                    <p>NO Product Found</p>
+                isLoading ?(
+                    <Loder/>
                 ):(
                     <div className={style.Results}>
                     <p>{result.length} Product found</p>
@@ -40,6 +46,7 @@ useEffect(()=>{
                                 <ProductCard
                                 key={resultProduct.id}
                                 productdata={resultProduct}
+                                isbtn={true}
                                 
                                 />
 

@@ -12,6 +12,7 @@ function Category({ data }) {
             <h3>{data.title}</h3>
             <div className={style.catagory_card_img}>
                 <img src={data.imageLink1} alt=""  width="100%" height="auto"/>
+                <img src={data.imageLink2} width="100%" height="auto"/>
             </div>
             <small className={style.card_link}>{data.link}</small>
         </div>
