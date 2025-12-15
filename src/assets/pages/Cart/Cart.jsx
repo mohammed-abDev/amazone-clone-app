@@ -12,7 +12,7 @@ import { GrSubtractCircle } from "react-icons/gr";
 
 function Cart() {
   const [state, dispatch] = useContext(DataContext);
-  console.log("mycart",state);
+  // console.log("mycart",state);
   const {Basket} = state;
 
   let TotallAmount = Basket.reduce((preAmout,CurrIteam)=>{
@@ -42,7 +42,7 @@ function Cart() {
               <div className={style.empty_cart_bg}></div>
               <div className={style.empty_cart_text}>
                 <h3>
-                  Opp! Your carts is <span>impity</span> 😒
+                  Opps! Your carts is <span>impity</span> 😒
                 </h3>
                 <i>You have no iteam in your shopping cart.</i>
                 <i>Let's go add something</i>

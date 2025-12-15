@@ -12,6 +12,9 @@ import {DataContext} from '../DataProvider/DataProvider'
 function Header() {
     const [{ Basket }, dispatch] = useContext(DataContext);
     // console.log(Basket.length)
+    const totallIteam =Basket?.reduce((amount,item)=>{
+        return amount + item.itemAmount;
+    },0)
 
   return (
 <>
@@ -85,7 +88,7 @@ function Header() {
                 <Link to="/cart">
                     {/* <img src="" alt="" /> */}
                     <CiShoppingCart size={50} />
-                    <span>{Basket.length}</span>
+                    <span>{totallIteam}</span>
                 </Link>
             </div>
         </div>
