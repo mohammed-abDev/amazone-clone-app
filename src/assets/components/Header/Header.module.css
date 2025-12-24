@@ -156,7 +156,12 @@
     border: 1px solid white;
     border-radius: 3px;
 }
-
+.profile span{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: antiquewhite;
+}
 @media(max-width: 1024px){
     .Languge_option{
         display: none;

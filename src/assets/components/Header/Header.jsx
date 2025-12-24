@@ -7,21 +7,26 @@ import { IoIosSearch } from "react-icons/io";
 import { CiShoppingCart } from "react-icons/ci";
 import HeaderBelow from './HeaderBelow';
 import {DataContext} from '../DataProvider/DataProvider'
+import {auth} from '../../Utility/firebase'
+import { useTranslation } from "react-i18next";
 
 
 function Header() {
-    const [{ Basket }, dispatch] = useContext(DataContext);
+    const [{ Basket ,user}, dispatch] = useContext(DataContext);
     // console.log(Basket.length)
+    // console.log(user);
     const totallIteam =Basket?.reduce((amount,item)=>{
         return amount + item.itemAmount;
     },0)
+
+    const { t, i18n } = useTranslation();
 
   return (
 <>
 <section className={style.Position_fexid}>
     <header className={style.header_Container}>
         <div className={style.amazoneLogo_location}>
-            <Link to="">
+            <Link to="/">
                 <img
                 src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                 alt="amzone-logo"/>
@@ -61,17 +66,32 @@ function Header() {
                 alt="flag"
                 />
                 <select name="" id="">
-                    <option value="">english</option>
-                    <option value="">f</option>
-                    <option value="">c</option>
+                    <option value="">English</option>
+                    <option value="">France</option>
+                    <option value="">China</option>
+                    <option value="">Amharic</option>
                 </select>
             </a>
 
     {/*Account */}
             <div className={style.account}>
-                <Link to="/auth">
+                <Link to={!user && "/auth"}>
+                {
+                    user ? 
+                    (<>
+                    <div className={style.profile}>
+                        <small>Hello {user?.email.split('@')[0].toUpperCase()} </small>
+                    </div>
+                    <p><strong onClick={()=>auth.signOut()}>sign out</strong></p>
+                    </>
+                    ) 
+                    :
+                    (<>
                     <small>Hello sin in</small>
                     <p><strong>account & Lists</strong></p>
+                    </>
+                    )
+                }
                 </Link>
             </div>
 

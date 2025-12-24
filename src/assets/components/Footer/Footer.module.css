@@ -1,0 +1,128 @@
+.footer {
+    margin-top: 40px;
+    background-color: #232f3e;
+    color: #dddddd;
+    font-size: 13px;
+}
+
+.backToTop {
+    background-color: #37475a;
+    color: #ffffff;
+    text-align: center;
+    padding: 12px 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.backToTop:hover {
+    background-color: #485769;
+}
+
+.linkSectionWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 40px;
+    border-bottom: 1px solid #3a4553;
+}
+
+.linkColumn {
+    min-width: 150px;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.linkColumn h4 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.linkColumn a {
+    color: #dddddd;
+    text-decoration: none;
+}  
+
+.linkColumn a:hover {
+    text-decoration: underline;
+}
+
+.logoRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 10px; */
+    padding: 20px 0;
+    border-bottom: 1px solid #3a4553;
+}
+
+.logo {
+    cursor: pointer;
+    max-width: 100px;
+    align-items: center;
+    padding-top:5px;
+}
+.logo img{
+    width: 70%;
+}
+
+.regionRow {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.regionButton {
+    background-color: #232f3e;
+    border: 1px solid #848688;
+    color: #dddddd;
+    padding: 6px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.regionButton:hover {
+    border-color: #ffffff;
+}
+
+.countryRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+    padding: 15px 30px;
+    background-color: #131a22;
+    font-size: 11px;
+    color: #cccccc;
+}
+
+.countryRow span {
+    white-space: nowrap;
+    cursor: default;
+}
+
+.bottomLinks {
+    background-color: #131a22;
+    padding: 15px 0 20px;
+    text-align: center;
+    color: #999999;
+    font-size: 11px;
+}
+
+.bottomLinks a {
+    color: #dddddd;
+    margin: 0 8px;
+    text-decoration: none;
+}  
+
+.bottomLinks a:hover {
+    text-decoration: underline;
+}
+
+.bottomLinks p {
+    margin-top: 5px;
+}

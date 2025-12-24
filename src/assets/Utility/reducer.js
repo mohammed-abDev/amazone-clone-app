@@ -5,24 +5,26 @@ import {Type} from './ActionType'
 
 export const initialState = {
   Basket: [],
+  user:null,
 };
 
+1
 
 export const reducer = (state, action) => {
   switch (action.type) {
     case Type.ADD_TO_BASKET: {
       const existingProductIndex = state.Basket.findIndex(
-        (product) => product.id === action.item.id
+        (p) => p.id === action.item.id
       );
 
       if (existingProductIndex === -1) {
-        // product not found → add new
+        // product not found  add new
         return {
           ...state,
           Basket: [...state.Basket, { ...action.item, itemAmount: 1 }],
         };
       } else {
-        // product found → update quantity
+        // product found  update quantity
         const updatedBasket = state.Basket.map((item, index) =>
           index === existingProductIndex
             ? { ...item, itemAmount: item.itemAmount + 1 }
@@ -63,6 +65,18 @@ export const reducer = (state, action) => {
 
       return state; // if product not found
     }
+    //EMPTY_BASKET-case-2
+    case Type.EMPTY_BASKET:
+      return{
+        ...state,
+        Basket:[],
+      }
+    //user-case-3
+    case Type.SET_USER:
+      return {
+        ...state,
+        user: action.user,
+      };
 
     default:
       return state;

@@ -64,9 +64,13 @@ function Cart() {
                     isbtn={false}
                   />
                   <div className={style.cart_item_btn}>
-                    <button onClick={()=>incrment(item)}><IoIosAddCircleOutline /></button>
+                    <button onClick={() => incrment(item)}>
+                      <IoIosAddCircleOutline />
+                    </button>
                     <span>{item.itemAmount}</span>
-                    <button onClick={()=>dicrment(item.id)}><GrSubtractCircle /></button>
+                    <button onClick={() => dicrment(item.id)}>
+                      <GrSubtractCircle />
+                    </button>
                   </div>
                 </section>
               ))}
@@ -84,7 +88,7 @@ function Cart() {
               <input type="checkbox" />
               <small>This order contains a gift</small>
             </span>
-            <Link to="payments">Continue to checkout</Link>
+            <Link to="/payments">Continue to checkout</Link>
           </div>
         )}
       </section>
